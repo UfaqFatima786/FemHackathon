@@ -1,0 +1,1094 @@
+:root {
+    --bg-color: #05000a;
+    --text-color: #ffffff;
+    --neon-pink: #ff0099;
+    --neon-purple: #9900ff;
+    --accent-color: #ff3366;
+    --nav-text: #cccccc;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Background gradients */
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 153, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(153, 0, 255, 0.2) 0%, transparent 40%);
+}
+
+.navlist a {
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.logo-text::after {
+    content: '188 x 48';
+    /* Placeholder for size from screenshot, just mimicking aesthetics */
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #aaa;
+    display: none;
+    /* Hidden unless we want to exactly mimic the redline spec look */
+}
+
+/* Add the purple background to logo like in screenshot */
+.logo-container {
+    background: transparent;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--nav-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #fff;
+}
+
+/* Main Layout */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Phone Mockup */
+.phone-wrapper {
+    position: relative;
+}
+
+.phone-frame {
+    width: 300px;
+    height: 600px;
+    background: #111;
+    border-radius: 40px;
+    padding: 12px;
+    border: 4px solid #333;
+    /* Dark frame */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    /* Yellow box from screenshot */
+    outline: 2px solid #ffcc00;
+    outline-offset: 10px;
+    z-index: 10;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.app-header {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-card {
+    height: 100%;
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.profile-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.action-buttons {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    background: white;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.btn-date,
+.btn-down {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-date {
+    background: white;
+    color: black;
+}
+
+.btn-down {
+    background: var(--neon-pink);
+    color: white;
+}
+
+/* Deco Icons */
+.deco-icon {
+    position: absolute;
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    animation: float 3s infinite ease-in-out;
+    z-index: 20;
+}
+
+.icon-fire {
+    top: -20px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.icon-bolt {
+    top: 40px;
+    right: -40px;
+    animation-delay: 1s;
+    font-size: 3rem;
+    color: #00ccff;
+}
+
+.icon-heart {
+    bottom: 100px;
+    right: -30px;
+    font-size: 4rem;
+    color: var(--neon-pink);
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    color: white;
+    position: relative;
+    max-width: 500px;
+}
+
+.user-tag {
+    background: #ffcc00;
+    color: black;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: absolute;
+    transform: rotate(-5deg);
+}
+
+.user-tag::before {
+    content: '';
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #ffcc00;
+    bottom: -8px;
+    left: 10px;
+}
+
+.tag-top {
+    top: -40px;
+    right: 0;
+}
+
+.tag-bottom {
+    bottom: 85px;
+    right: -50px;
+    background: #ff6600;
+}
+
+.tag-bottom::before {
+    border-top-color: #ff6600;
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 20px;
+    /* border: 2px solid #00cc66; */
+    /* Green border from design */
+    padding: 10px;
+    display: inline-block;
+}
+
+.text-purple {
+    color: #cc00cc;
+}
+
+.text-pink {
+    color: var(--neon-pink);
+}
+
+.hero-description-box {
+    /* border: 2px solid #ff6600; */
+    padding: 15px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.hero-description-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+/* Store Buttons */
+.store-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.store-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.btn-text span {
+    font-size: 0.6rem;
+}
+
+.btn-text strong {
+    font-size: 1.1rem;
+}
+
+/* Highlight for Google Play */
+.google-play {
+    position: relative;
+}
+
+.google-play::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px solid var(--neon-pink);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* Stats Section */
+.stats-section {
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.stats-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    color: var(--neon-pink);
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 50px;
+    background: linear-gradient(to right, #d000ff, #ff0066);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.about-card {
+    padding: 40px 30px;
+    text-align: left;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s;
+}
+
+.about-card:last-child {
+    border-right: none;
+}
+
+.about-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.about-card:nth-child(1) .card-icon {
+    color: #ffcc00;
+}
+
+.about-card:nth-child(2) .card-icon {
+    color: #00ccff;
+}
+
+.about-card:nth-child(3) .card-icon {
+    color: #ff0066;
+}
+
+.about-card:nth-child(4) .card-icon {
+    color: #33ff99;
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.about-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-card:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Why You Need Section */
+.why-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.why-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.why-feature-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.why-text {
+    flex: 1;
+}
+
+.why-text h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.why-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .why-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .why-text h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Chat Section */
+.chat-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chat-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.chat-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.chat-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: white;
+    border: 2px solid #aaa;
+    /* Grayish border from screenshot */
+    padding: 10px 15px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    /* Slight fill? */
+    position: relative;
+    /* Simulate the overlap effect if needed, but simple border is good for clone */
+}
+
+/* The title in screenshot has a "Chat Around The World" text inside a box. 
+   The text seems to be "Chat Around The World" with white color.
+   Wait, screenshot shows "Chat" "Around" "The World" ? No, full text.
+   It looks like a sticker style.
+*/
+
+.chat-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.chat-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-feature-img {
+    width: 100%;
+    max-width: 400px;
+    /* Phone format */
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+    border-radius: 40px;
+    /* If it's a raw screen image, round it. If it's a phone frame, maybe not needed. */
+}
+
+@media (max-width: 900px) {
+    .chat-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chat-text {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+/* Incredible Chat Experience Section */
+.experience-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    /* Reverse order for visual variety */
+    flex-direction: row;
+}
+
+.experience-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.experience-feature-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+}
+
+.experience-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.experience-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.tags-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tag-pill {
+    background: rgba(255, 255, 255, 0.08);
+    /* Dark glass styling */
+    color: #ccc;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+}
+
+.tag-pill:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.experience-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .experience-container {
+        flex-direction: column-reverse;
+        /* Stack with image below or top? Usually text top on mobile if consistent with previous, but let's stick to column */
+        text-align: center;
+    }
+
+    .tags-container {
+        justify-content: center;
+    }
+
+    .experience-image {
+        margin-top: 40px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.testimonials-title-box {
+    flex: 1;
+}
+
+.testimonials-title-box h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.text-left {
+    text-align: left !important;
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
+}
+
+.testimonials-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.card-dimmed {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.card-active {
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 20px rgba(255, 0, 153, 0.3);
+    z-index: 10;
+    transform: scale(1.05);
+    background: rgba(20, 0, 30, 0.8);
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: var(--neon-pink);
+    line-height: 1;
+    font-family: serif;
+    margin-bottom: 10px;
+}
+
+.review-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.user-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-meta h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: white;
+}
+
+.user-meta span {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.stars {
+    color: #ffcc00;
+    /* Gold/Yellow stars */
+    font-size: 1.2rem;
+    margin-left: auto;
+    letter-spacing: 2px;
+}
+
+.badge-muniza {
+    background: var(--neon-pink);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+    .testimonials-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonials-title-box h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .testimonials-list {
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+.cta-section {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: white;
+    /* Base color */
+    background: linear-gradient(to right, #9900ff, #ff0099);
+    /* Purple to Pink gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .store-btn {
+        width: 100%;
+        justify-content: center;
+        max-width: 250px;
+    }
+}
+
+/* Press Section */
+.press-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.press-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.press-header h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--neon-pink);
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.press-header::before,
+.press-header::after {
+    content: '';
+    height: 2px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
+}
+
+.press-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.press-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px;
+    margin-bottom: 50px;
+}
+
+.press-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0.9;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stylized Logo Placeholders */
+.logo-mashable {
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-family: sans-serif;
+}
+
+.logo-buzzfeed {
+    font-family: sans-serif;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-fastcompany {
+    font-family: serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.company-oval {
+    display: inline-block;
+    transform: scaleX(0.8);
+}
+
+.logo-versus {
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: lowercase;
+    font-style: italic;
+}
+
+.logo-pando {
+    font-weight: 800;
+    text-transform: uppercase;
+    gap: 5px;
+    letter-spacing: 1px;
+}
+
+.pando-box {
+    background: white;
+    color: black;
+    padding: 0 5px;
+    font-weight: 900;
+}
+
+.logo-techcrunch {
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    gap: 5px;
+}
+
+.tc-box {
+    background: #00cc00;
+    color: white;
+    padding: 2px 4px;
+    font-size: 0.8em;
+    font-weight: 900;
+}
+
+.logo-datingnews {
+    font-size: 1rem;
+    line-height: 1;
+    text-align: left;
+    gap: 5px;
+    font-weight: 700;
+}
+
+.logo-datingip {
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.logo-datingadvice {
+    flex-direction: column;
+    font-size: 0.9rem;
+    line-height: 1;
+    gap: 5px;
+}
+
+.press-footer p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.press-footer a {
+    color: white;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .press-grid {
+        gap: 30px;
+    }
+
+    .press-logo {
+        flex-basis: 40%;
+    }
+}
