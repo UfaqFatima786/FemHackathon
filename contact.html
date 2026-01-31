@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOWN - Date On Easy Mode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navUl navnav mt-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="/images/Login.svg" class="logo-1"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mt-2" id="navbarSupportedContent">
+                        <ul class="navbar-nav navlist ms-auto mb-lg-0 gap-5">
+                            <li class="nav-item">
+                                <a class="nav-link blog" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dating Advice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">DOWN Wiki</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Careers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <section class="contact-section">
+        <div class="contact-box">
+            <div class="contact-left">
+                <h1 class="contact-title">Contact Us</h1>
+                <p class="contact-desc">
+                    If you have any issues or questions, please let us know from the form or by email. We'd love to
+                    help!
+                </p>
+                <a href="mailto:contact@downapp.com" class="contact-email">contact@downapp.com</a>
+
+                <div class="contact-image-wrapper">
+                    <!-- Using img 2.svg as it likely contains the phones graphic -->
+                    <img src="images/img 2.svg" alt="Contact Phones" class="contact-phones">
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control-custom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control-custom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control-custom" rows="4"></textarea>
+                    </div>
+
+                    <div class="captcha-box">
+                        <div class="captcha-placeholder">
+                            <div class="captcha-checkbox"></div>
+                            <span>I'm not a robot</span>
+                            <div class="captcha-logo">
+                                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA"
+                                    width="24">
+                                <small>reCAPTCHA</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-logo">DOWN</div>
+                <p class="footer-desc">The honest dating app that puts YOU in control!<br>
+                    We encourage users to be honest to form a real,<br>
+                    trustworthy, and transparent connection.</p>
+                <p class="copyright">© 2022 Down. All Rights Reserved</p>
+            </div>
+            <div class="footer-right">
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Dating Advice</a></li>
+                    <li><a href="#">DOWN Wiki</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">📷</a> <!-- Instagram-ish -->
+                    <a href="#" class="social-icon">🐦</a> <!-- Twitter-ish -->
+                    <a href="#" class="social-icon">M</a>
+                    <a href="#" class="social-icon">in</a>
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy & Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
